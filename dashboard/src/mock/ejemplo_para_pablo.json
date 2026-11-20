@@ -1,0 +1,246 @@
+{
+  "gameId": 2021090900,
+  "playId": 97,
+  "mitad": "confirmacion",
+  "situacion": {
+    "down": 3,
+    "yardas": 2,
+    "yardas_a_goal": 67
+  },
+  "equipo": "TB",
+  "defensa": "DAL",
+  "formacion": "SHOTGUN",
+  "mariscal": "Tom Brady",
+  "cuarto": 1,
+  "reloj": "13:33",
+  "local": "TB",
+  "visita": "DAL",
+  "puntos_local": 0,
+  "puntos_visita": 0,
+  "desenlace": null,
+  "cuadros": [
+    {
+      "frameId": 6,
+      "evento": "ball_snap",
+      "direccion": "derecha",
+      "jugadores": [
+        {
+          "nflId": 25511,
+          "equipo": "TB",
+          "x": 37.64,
+          "y": 24.26
+        },
+        {
+          "nflId": 35481,
+          "equipo": "TB",
+          "x": 41.65,
+          "y": 29.34
+        },
+        {
+          "nflId": 35634,
+          "equipo": "TB",
+          "x": 41.04,
+          "y": 36.77
+        },
+        {
+          "nflId": 39985,
+          "equipo": "TB",
+          "x": 37.55,
+          "y": 22.27
+        },
+        {
+          "nflId": 40151,
+          "equipo": "TB",
+          "x": 42.1,
+          "y": 24.02
+        },
+        {
+          "nflId": 41233,
+          "equipo": "TB",
+          "x": 42.01,
+          "y": 16.2
+        },
+        {
+          "nflId": 41263,
+          "equipo": "DAL",
+          "x": 43.3,
+          "y": 18.89
+        },
+        {
+          "nflId": 42377,
+          "equipo": "TB",
+          "x": 41.38,
+          "y": 26.92
+        },
+        {
+          "nflId": 42403,
+          "equipo": "DAL",
+          "x": 43.9,
+          "y": 32.63
+        },
+        {
+          "nflId": 42404,
+          "equipo": "TB",
+          "x": 41.93,
+          "y": 25.65
+        },
+        {
+          "nflId": 43306,
+          "equipo": "DAL",
+          "x": 44.68,
+          "y": 29.35
+        },
+        {
+          "nflId": 43478,
+          "equipo": "DAL",
+          "x": 43.61,
+          "y": 37.62
+        },
+        {
+          "nflId": 44896,
+          "equipo": "TB",
+          "x": 40.16,
+          "y": 35.09
+        },
+        {
+          "nflId": 44904,
+          "equipo": "DAL",
+          "x": 44.61,
+          "y": 36.36
+        },
+        {
+          "nflId": 44955,
+          "equipo": "DAL",
+          "x": 43.35,
+          "y": 25.18
+        },
+        {
+          "nflId": 44962,
+          "equipo": "DAL",
+          "x": 58.99,
+          "y": 27.18
+        },
+        {
+          "nflId": 46163,
+          "equipo": "TB",
+          "x": 41.41,
+          "y": 22.63
+        },
+        {
+          "nflId": 47996,
+          "equipo": "DAL",
+          "x": 48.07,
+          "y": 22.41
+        },
+        {
+          "nflId": 52421,
+          "equipo": "TB",
+          "x": 41.11,
+          "y": 21.31
+        },
+        {
+          "nflId": 52459,
+          "equipo": "DAL",
+          "x": 43.35,
+          "y": 15.88
+        },
+        {
+          "nflId": 53441,
+          "equipo": "DAL",
+          "x": 43.68,
+          "y": 21.93
+        },
+        {
+          "nflId": 53504,
+          "equipo": "DAL",
+          "x": 43.7,
+          "y": 26.67
+        }
+      ]
+    }
+  ],
+  "secuencia_observada": null,
+  "evaluacion": {
+    "estado": "referencia",
+    "recomendacion": null,
+    "motivo": "El modelo estima la tasa de la liga en esta situación. Las opciones muestran evidencia histórica de desarrollo.",
+    "pronostico": {
+      "p": 0.5762662625907854,
+      "ic95": [
+        0.49565289260043993,
+        0.6488856428663552
+      ],
+      "modelo": "distancia_y_zona"
+    },
+    "grupo": {
+      "n": 113,
+      "partidos": 52,
+      "exitos": 58,
+      "tasa": 0.5132743362831859,
+      "ic95": [
+        0.41172699849170435,
+        0.6078470588235294
+      ]
+    },
+    "opciones": [
+      {
+        "formacion": "EMPTY",
+        "n": 22,
+        "partidos": 19,
+        "exitos": 10,
+        "tasa": 0.45454545454545453,
+        "ic95": [
+          0.2665789473684211,
+          0.6363636363636364
+        ]
+      },
+      {
+        "formacion": "SHOTGUN",
+        "n": 78,
+        "partidos": 42,
+        "exitos": 39,
+        "tasa": 0.5,
+        "ic95": [
+          0.38235294117647056,
+          0.6091954022988506
+        ]
+      }
+    ],
+    "distancia": "1–3",
+    "zona": "propio",
+    "equipo_filtro": null,
+    "evidencia_id": "*|1–3|propio",
+    "fuente_muestra": "desarrollo",
+    "contraste_formaciones": {
+      "ambito": "global ajustado en confirmación",
+      "n": 372,
+      "estratos": 41,
+      "opciones": {
+        "EMPTY": {
+          "n": 119,
+          "partidos": 51,
+          "tasa": 0.4369747899159664,
+          "ic95": [
+            0.34997641509433963,
+            0.5241393214682981
+          ]
+        },
+        "SHOTGUN": {
+          "n": 253,
+          "partidos": 57,
+          "tasa": 0.3201581027667984,
+          "ic95": [
+            0.2604617528349029,
+            0.37991484716157203
+          ]
+        }
+      },
+      "diferencia": 0.11654098897293103,
+      "ic95": [
+        -0.007336028884001967,
+        0.23117477699452596
+      ]
+    },
+    "lectura": "Usar la referencia para preparar esta distancia. El contraste histórico entre formaciones no permite priorizar una llamada."
+  }
+}
