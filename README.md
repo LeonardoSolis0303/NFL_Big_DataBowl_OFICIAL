@@ -246,3 +246,7 @@ Sin `--out`, el generador reemplaza `backend/modelo.json`. Las huellas SHA-256 d
   - Los hashes de las entradas se registran en el artefacto.
   - El manifiesto `tools/manifest.json` fija los 122 archivos de tracking.
   - Las pruebas automáticas comprueban conteos y contrato.
+
+## Declaración
+
+Declaramos que este trabajo se realizó durante el evento NFL Big Data Bowl UNAM 2026 y únicamente por los participantes del equipo: Leo (análisis, API e integración) y Pablo (dashboard). La organización del evento proporcionó la plantilla `.hackathon/` y las reglas del stack.
