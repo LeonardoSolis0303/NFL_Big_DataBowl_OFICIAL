@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html { color-scheme: dark; @apply bg-sala text-tiza; }
+  body { @apply font-sans antialiased; line-height: 1.48; }
+  a { @apply text-lima; }
+  :focus-visible { outline: 3px solid #BAE0FF; outline-offset: 3px; }
+  ::selection { background: #DFF66F55; }
+}
+
+@layer components {
+  .cifra { font-variant-numeric: tabular-nums; }
+  .k { @apply font-mono text-xs font-semibold uppercase tracking-[0.12em] text-tiza-2; }
+  .rotulo { @apply k; }
+  .marcador { @apply font-marcador cifra; }
+  .titular { font: 900 clamp(48px, 6.7vw, 92px) / 0.92 system-ui, sans-serif; letter-spacing: -0.055em; }
+  .subtitulo { font-size: clamp(30px, 4vw, 46px); line-height: 1.02; letter-spacing: -0.04em; @apply font-bold; }
+  .stat { @apply block font-extrabold cifra; font-size: clamp(35px, 4vw, 59px); line-height: 1.1; letter-spacing: -0.045em; }
+  .boton { @apply inline-flex items-center justify-center gap-2 border px-3 py-1.5 font-bold no-underline transition-colors disabled:cursor-not-allowed disabled:opacity-40; }
+  .accion { @apply boton border-lima bg-lima text-sala hover:bg-tiza hover:border-tiza; }
+  .boton-primario { @apply accion; }
+  .boton-revelar { @apply accion; }
+  .boton-linea { @apply boton border-borde bg-transparent font-semibold text-lima hover:border-tiza-2; }
+  .control { @apply inline-flex h-9 min-w-9 items-center justify-center border border-borde bg-transparent px-2 text-tiza hover:border-tiza-2 disabled:opacity-40; }
+  .entrada { @apply w-full border border-borde bg-sala px-2 py-1.5 cifra text-tiza focus:border-tiza-2; }
+  .panel { @apply border border-borde bg-pizarra; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
