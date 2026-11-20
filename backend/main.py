@@ -1,12 +1,25 @@
 """FastAPI entry point for the event host. Model is built offline."""
+import os
+from pathlib import Path
+def cargar_env():
+    f = Path(__file__).resolve().parent.parent / ".env"
+    if f.exists():
+        for linea in f.read_text(encoding="utf-8-sig").splitlines():
+            linea = linea.strip()
+            if linea and not linea.startswith("#") and "=" in linea:
+                k, v = linea.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+cargar_env()
+
 from functools import lru_cache
 import json
-from pathlib import Path
 from typing import Annotated
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict, Field
 
+from . import ai_coach
 from .decision import estimate
 
 app = FastAPI(title="NFL UNAM · Decisiones en tercer down", version="1.0")
@@ -57,3 +70,20 @@ def jugada(game_id:int, play_id:int, revelar:bool=False):
     s=row["situacion"]
     return {**row,"secuencia_observada":row.get("secuencia_observada") if revelar else None,"desenlace":row["desenlace"] if revelar else None,
             "evaluacion":estimate(model,s["down"],s["yardas"],s["yardas_a_goal"])}
+
+
+class CoachQuestion(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    situacion: Situation
+    pregunta: Annotated[str, Field(min_length=3, max_length=500)]
+
+
+@app.post("/api/coach-ia")
+def coach_ia(q: CoachQuestion):
+    """Interpreta con Bedrock la misma evaluación que devuelve api/sugerencia. El cliente no envía cifras."""
+    s = q.situacion
+    model = bundle()
+    evaluacion = estimate(model, s.down, s.yardas, s.yardas_a_goal, s.equipo)
+    situacion = dict(down=s.down, yardas=s.yardas, yardas_a_goal=s.yardas_a_goal)
+    status, body = ai_coach.responder(q.pregunta.strip(), situacion, evaluacion, model["resumen"]["tracking"])
+    return JSONResponse(body, status_code=status)
